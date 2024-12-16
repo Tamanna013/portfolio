@@ -1,141 +1,189 @@
 <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-        <!--==================== UNICONS ====================-->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-        
-        <!--==================== SWIPER CSS ====================-->
-        <link rel="stylesheet" href="./swiper-bundle.min.css">
-        
-        <!--==================== CSS ====================-->
-        <link rel="stylesheet" href="./styles.css">
-
-        <title>Responsive Portfolio Website</title>
-    </head>
-    <body>
-        <!--==================== HEADER ====================-->
-        <header class="header" id="header">
-            <nav class="nav container">
-                <a href="#" class="nav__logo">Tamanna</a>
-                
-                <div class="nav__menu" id="nav-menu">
-                    <ul class="nav__list grid">
-                        <li class="nav__item">
-                            <a href="#home" class="nav__link">
-                                <i class="bi bi-house-door nav__icon"></i> Home
-                            </a>
-                        </li>
-                    </ul>
-                    <ul class="nav__list grid">
-                        <li class="nav__item">
-                            <a href="#about" class="nav__link">
-                                <i class="bi bi-person  nav__icon"></i> About
-                            </a>
-                        </li>
-                    </ul>
-                    <ul class="nav__list grid">
-                        <li class="nav__item">
-                            <a href="#skills" class="nav__link">
-                                <i class="bi bi-file-earmark nav__icon"></i> Skills
-                            </a>
-                        </li>
-                    </ul>
-                    <ul class="nav__list grid">
-                        <li class="nav__item">
-                            <a href="#services" class="nav__link">
-                                <i class="bi bi-briefcase nav__icon"></i> Services
-                            </a>
-                        </li>
-                    </ul>
-                    <ul class="nav__list grid">
-                        <li class="nav__item">
-                            <a href="#portfolio" class="nav__link">
-                                <i class="bi bi-image nav__icon"></i> Portfolio
-                            </a>
-                        </li>
-                    </ul>
-                    <ul class="nav__list grid">
-                        <li class="nav__item">
-                            <a href="#contact" class="nav__link">
-                                <i class="bi bi-send nav__icon"></i> Contact me
-                            </a>
-                        </li>
-                    </ul>
-                    <i class="bi bi-x-lg nav__close" id="nav-close"></i>
-                </div>
-                <div class="nav__btns">
-                    <div class="nav__toggle" id="nav-toggle">
-                        <i class="bi bi-app"></i>
+<html lang="en">
+<head>  
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tamanna Shaw</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'> 
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Bhai|Bree+Serif&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">Portfolio: <span>Tamanna Shaw.</span></a>
+        <div class="bx bx-menu" id="menu-icon"></div>
+        <ul class="navbar"> 
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="./skills.html">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+        <div class="bx bx-moon" id="darkmode"></div>
+        </ul>
+    </header>
+    <section class="home" id="home">
+        <div class="social">
+            <a href="https://www.linkedin.com/in/tamanna-shaw-mg"><i class="bx bxl-linkedin"></i></a>
+            <a href="https://github.com/Tamanna013"><i class="bx bxl-github"></i></a>
+        </div>
+        <div class="home-img">
+            <img class="hero user-image" src="user.png" alt="Tamanna Shaw">
+        </div>
+        <div class="home-text">
+            <span>Hey there, I'm</span>
+            <h1>Tamanna Shaw</h1>
+            <h2>I am a <span class="role"></span> </h2>
+            <p>I'm a student at National Institute of Technology, Goa.</p>
+            <p>A passionate B.Tech CompSci student exploring te world of ideas and tech.</p>
+            <p>As a budding tech enthusiast, I've participated in multiple hackathons where I collaborate with a talented team to tackle real-world challenges.</p>
+            <a href="#" class="btn">Download my Resume</a>
+            <div class="btn-pink" id="btn">Hire me</div>
+            <div class="absolute faded-text">Tamanna Shaw</div>
+        </div>
+    </section>
+    <section class="about" id="about">
+        <div class="heading">
+            <h2>About Me</h2>
+            <span>Introduction: </span>
+        </div>
+        <div class="about-container">
+            <div class="about-img">
+                <img class="hero" src="user.png" alt="">
+            </div>
+            <div class="about-text">
+                <p>Hi, I’m Tamanna, a passionate developer with strong knowledge of Data Structures and Algorithms. I’ve solved over 230 problems on LeetCode and constantly strive to enhance my problem-solving skills. I’ve participated in several hackathons, building innovative solutions like automated academic tools and web platforms. As a core member of GDG NIT Goa, I actively contribute to the tech community and inspire others to explore development. Currently, I’m focused on advancing my expertise in web development and AI to create impactful, user-centric solutions.</p>
+                <div class="information">
+                    <div class="info-box">
+                        <i class="bx bxs-user"></i>
+                        <span>Tamanna Shaw</span>
+                    </div>
+                    <div class="info-box">
+                        <i class='bx bxs-phone-call'></i>
+                        <span>+91 82729 45110</span>
+                    </div>
+                    <div class="info-box">
+                        <i class='bx bxl-gmail' ></i>
+                        <span>tamannashawmg@gmail.com</span>
                     </div>
                 </div>
-            </nav>
-        </header>
+                <a href="./TamannaShaw (6).pdf" class="btn">Download my Resume</a>
+            </div>
+        </div>
+    </section>
 
-        <!--==================== MAIN ====================-->
-        <main class="main">
-            <!--==================== HOME ====================-->
-            <section class="home section" id="home">
-                
-            </section>
+    <!--
+    <section class="skills" id="skills">
+        <div class="heading">
+            <h2>Skills</h2>
+            <span>My Skills: </span>
+        </div>
+        <div class="skills-container">
+            <div class="bars">
+                <div class="bars-box">
+                    <h3>HTML</h3>
+                    <span>95%</span>
+                    <div class="light-bar"></div>
+                    <div class="percent-bar html-bar"></div>
+                </div>
+                <div class="bars-box">
+                    <h3>CSS</h3>
+                    <span>85%</span>
+                    <div class="light-bar"></div>
+                    <div class="percent-bar css-bar"></div>
+                </div>
+                <div class="bars-box">
+                    <h3>Javascript</h3>
+                    <span>75%</span>
+                    <div class="light-bar"></div>
+                    <div class="percent-bar js-bar"></div>
+                </div>
+                <div class="bars-box">
+                    <h3>React</h3>
+                    <span>80%</span>
+                    <div class="light-bar"></div>
+                    <div class="percent-bar react-bar"></div>
+                </div>
+            </div>
+            <div class="skills-img">
+                <img class="hero" src="user.png" alt="Tamanna Shaw">
+            </div>
+        </div>
+    </section>
+    -->
 
-            <!--==================== ABOUT ====================-->
-            <section class="about section" id="about">
-                
-            </section>
+    <!--
+    <section class="services" id="services">
+        <div class="heading">
+            <h2>Services</h2>
+            <span>Services I Provide: </span>
+        </div>
+        <div class="services-container">
+            <div class="services-box">
+                <i class="bx bx-code-alt"></i>
+                <h3>Web Development</h3>
+                <a href="#">Learn More</a>
+            </div>
+            <div class="services-box">
+                <i class="bx bx-server"></i>
+                <h3>Backend Development</h3>
+                <a href="#">Learn More</a>
+            </div>
+            <div class="services-box">
+                <i class='bx bxs-cog' ></i>
+                <h3>Software Engineer</h3>
+                <a href="#">Learn More</a>
+            </div>
+            <div class="services-box">
+                <i class='bx bxl-android' ></i>
+                <h3>App Development</h3>
+                <a href="#">Learn More</a>
+            </div>
+        </div>
+    </section>
+    -->
 
-            <!--==================== SKILLS ====================-->
-            <section class="skills section" id="skills">
-
-            </section>
-
-            <!--==================== QUALIFICATION ====================-->
-            <section class="qualification section">
-
-            </section>
-
-            <!--==================== SERVICES ====================-->
-            <section class="services section" id="services">
-                
-            </section>
-
-            <!--==================== PORTFOLIO ====================-->
-            <section class="portfolio section" id="portfolio">
-                
-            </section>
-
-            <!--==================== PROJECT IN MIND ====================-->
-            <section class="project section">
-
-            </section>
-
-            <!--==================== TESTIMONIAL ====================-->
-            <section class="testimonial section">
-                
-            </section>
-
-            <!--==================== CONTACT ME ====================-->
-            <section class="contact section" id="contact">
-
-            </section>
-        </main>
-
-        <!--==================== FOOTER ====================-->
-        <footer class="footer">
-         
-        </footer>
-        
-        <!--==================== SCROLL TOP ====================-->
-        
-
-        <!--==================== SWIPER JS ====================-->
-        <script src="./swiper-bundle.min.js"></script>
-
-        <!--==================== MAIN JS ====================-->
-        <script src="./main.js"></script>
-    </body>
-</html>
+    <section class="contact" id="contact">
+        <div class="heading">
+            <h2>Contact</h2>
+            <span>Drop me a Message!</span>
+        </div>
+        <div class="contact-form">
+            <form action="#">
+                <input type="text" placeholder="Your Name">
+                <input type="Email" placeholder="Your Email">
+                <textarea name="" id="" cols="30" rows="10" placeholder="Type a Message here...."></textarea>
+                <input type="button" value="Send" class="contact-button"> 
+            </form>
+        </div>
+    </section>
+    <div class="footer">
+        <h2>Connect With Me</h2>
+        <div class="footer-social">
+            <a href="https://www.linkedin.com/in/tamanna-shaw-mg"><i class="bx bxl-linkedin"></i></a>
+            <a href="https://github.com/Tamanna013"><i class="bx bxl-github"></i></a>
+            <a href="https://www.instagram.com/tashhxx._.xx/"><i class="bx bxl-instagram"></i></a>
+        </div>
+    </div>
+    <div class="copyright">
+        &#169; PortFolio | Tamanna Shaw
+    </div> 
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="https://kit.fontawesome.com/58a810656e.js" crossorigin="anonymous"></script>
+    <script src="scripts.js"></script>
+    <script>
+        var typeData = new Typed(".role", {
+            strings: [
+                "Aspiring Software Developer",
+                "Aspiring Full Stack Developer",
+                "Aspiring Web Developer",
+                "Aspiring Backend Developer",
+                "Coder",
+            ],
+            loop: true,
+            typeSpeed: 100,
+            backSpeed: 80,
+            backDelay: 1000,
+        });
+    </script>
+</body>
+</html> 
