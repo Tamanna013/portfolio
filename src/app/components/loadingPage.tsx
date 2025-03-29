@@ -31,7 +31,7 @@ export default function LoadingScreen(): JSX.Element {
       </motion.div>
 
       <p className="text-center text-sm max-w-lg">
-        "Almost there..."
+        Almost there...
       </p>
     </div>
   );

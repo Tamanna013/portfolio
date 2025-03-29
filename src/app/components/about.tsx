@@ -49,9 +49,9 @@ const About = () => {
           <div className="p-6 rounded-lg shadow-[0_0_25px_rgba(255,255,255,0.7)]">
             <h1 className="text-5xl font-extrabold mb-6">ABOUT ME</h1>
             <p className="text-lg max-w-md">
-              Hello! I'm Tamanna Shaw, a web developer from India. I love working with JavaScript
+              Hello! I&apos;m Tamanna Shaw, a web developer from India. I love working with JavaScript
               and building creative projects that solve real-world problems. I enjoy learning
-              new technologies and exploring new domains. Currently, I'm exploring Game Development.
+              new technologies and exploring new domains. Currently, I&apos;m exploring Game Development.
               My Tech Stack: React, Next.js, Vite, JS, TypeScript, Three.js
             </p>
 
