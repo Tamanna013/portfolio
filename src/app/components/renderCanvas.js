@@ -10,8 +10,8 @@ n.prototype = {
     },
     update: function () {
         this.phase += this.frequency;
-        let result = this.offset + Math.sin(this.phase) * this.amplitude;  // Removed unused 'e'
-        return result;
+        // Removed 'e' assignment and returned the result directly
+        return this.offset + Math.sin(this.phase) * this.amplitude;
     },
     value: function () {
         return this.update(); // Calls update to return the value
@@ -35,7 +35,7 @@ Line.prototype = {
         }
     },
     update: function () {
-        var e = this.spring;
+        var e = this.spring; // 'e' here is used as spring constant.
         var t = this.nodes[0];
         t.vx += (pos.x - t.x) * e;
         t.vy += (pos.y - t.y) * e;
@@ -93,7 +93,7 @@ function onMousemove(e) {
             pos.x = e.clientX;
             pos.y = e.clientY;
         }
-        e.preventDefault(); // Added prevent default to stop page scrolling
+        e.preventDefault();
     }
 
     function l(e) {
