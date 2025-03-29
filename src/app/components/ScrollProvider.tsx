@@ -18,9 +18,9 @@ interface ScrollProviderProps {
 export const ScrollProvider = ({ children }: ScrollProviderProps) => {
   const [scrollY, setScrollY] = useState(0);
 
-  useLenis(({ scroll }: any) => {
+  useLenis(({ scroll }: { scroll: number }) => {
     setScrollY(scroll);
-  });
+  });  
 
   return (
     <ScrollContext.Provider value={{ scrollY }}>

@@ -1,6 +1,7 @@
 "use client"
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export default function LoadingScreen(): JSX.Element {
   const [loading, setLoading] = useState<number>(0);
@@ -16,7 +17,7 @@ export default function LoadingScreen(): JSX.Element {
     <div className="h-screen w-full flex flex-col justify-center items-center bg-black text-white p-4">
       {/* Centered Image */}
       <div className="flex justify-center items-center mb-8">
-        <img src="/pic1.jpg" alt="Random" className="h-32 w-32 object-cover rounded-lg" />
+        <Image src="/pic1.jpg" alt="Random" width= {32} height={32} className="h-32 w-32 object-cover rounded-lg" />
       </div>
       
       {/* Loading Text */}

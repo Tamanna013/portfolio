@@ -1,5 +1,5 @@
 import React, { useState, useRef } from "react";
-import { ReactSketchCanvas } from "react-sketch-canvas";
+import { ReactSketchCanvas, ReactSketchCanvasRef } from "react-sketch-canvas";
 
 const Testimonials = () => {
   const [testimonial, setTestimonial] = useState({
@@ -11,7 +11,7 @@ const Testimonials = () => {
     Array<{ name: string; text: string; drawing: string }>
   >([]);
 
-  const canvasRef = useRef<any>(null);
+  const canvasRef = useRef<ReactSketchCanvasRef>(null);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
