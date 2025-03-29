@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { ReactElement, useContext, useEffect, useRef } from "react";
 import { HiOutlineArrowNarrowDown } from "react-icons/hi";
+import { FaGithub, FaLinkedin, FaEnvelope, FaCode } from "react-icons/fa";
 import { ScrollContext } from "./ScrollProvider";
 import { renderCanvas } from "./renderCanvas";
 
@@ -38,6 +39,20 @@ export default function Hero(): ReactElement {
                 Web developer, I make websites appear
                 SURREAL.
               </h2>
+              <div className="flex space-x-4 mt-4">
+                <a href="https://github.com/Tamanna013" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-black transition duration-300">
+                  <FaGithub size={32} />
+                </a>
+                <a href="mailto:23cse1031@nitgoa.ac.in" className="text-gray-600 hover:text-black transition duration-300">
+                  <FaEnvelope size={32} />
+                </a>
+                <a href="https://www.linkedin.com/in/tamanna-shaw-mg" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-black transition duration-300">
+                  <FaLinkedin size={32} />
+                </a>
+                <a href="https://leetcode.com/u/TashaMG/" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-black transition duration-300">
+                  <FaCode size={32} />
+                </a>
+              </div>
             </div>
             <motion.div
               animate={{
@@ -50,7 +65,6 @@ export default function Hero(): ReactElement {
                 className="flex cursor-pointer flex-col items-center justify-center"
                 onClick={() => {
                   const intro = document.querySelector("#intro");
-
                   intro?.scrollIntoView({ behavior: "smooth" });
                 }}
               >

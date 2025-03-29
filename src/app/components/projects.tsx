@@ -4,31 +4,31 @@ const projects = [
   {
     title: "iPhone Clone",
     description: "A front-end clone of the iPhone interface with smooth animations and interactions.",
-    image: "/iphone-clone.png",
+    image: "/apple.png",
     github: "https://github.com/Tamanna013/iPhone",
   },
   {
     title: "AnswerPol - AI-Powered Q&A Platform",
     description: "An AI-driven Q&A platform that provides precise answers and references for research queries.",
-    image: "/answerpol.png",
+    image: "/screenshot.png",
     github: "https://github.com/Tamanna013/AnswerPol",
   },
   {
     title: "3D Globe Visualization",
-    description: "An interactive 3D globe built with Three.js to display real-time data points dynamically.",
-    image: "/3d-globe.png",
+    description: "An interactive 3D globe built with Three.js.",
+    image: "/globe.png",
     github: "https://github.com/Tamanna013/3D-Earth",
   },
   {
     title: "Spotify Clone",
     description: "A dynamic music streaming web app inspired by Spotify, built with Next.js and Tailwind CSS.",
-    image: "/spotify-clone.png",
+    image: "/ss2.png",
     github: "https://github.com/Tamanna013/Spotify-Clone",
   },
   {
     title: "Fest Website",
-    description: "A visually stunning website for our college fest, featuring animations, schedules, and event details.",
-    image: "/fest-website.png",
+    description: "A visually stunning website for our college fest. Made with Typescript and Three.js for animative elements.",
+    image: "/img1.png",
     github: "https://github.com/Tamanna013/fest",
   },
   {
@@ -39,8 +39,8 @@ const projects = [
   },
   {
     title: "Ice Cream Page",
-    description: "A visually appealing ice cream shop webpage with interactive elements and flavor creation features.",
-    image: "/ice-cream-page.png",
+    description: "A visually appealing ice cream shop webpage built with Next.js.",
+    image: "/icecream.png",
     github: "https://github.com/Tamanna013/ice-cream",
   },
 ];
