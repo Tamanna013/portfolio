@@ -139,7 +139,7 @@ function resizeCanvas() {
     ctx.canvas.height = window.innerHeight;
 }
 
-var ctx, f, _e = 0, pos = {}, lines = [], E = {
+var ctx, f = 0, pos = {}, lines = [], E = {
     debug: true,
     friction: 0.5,
     trails: 20,
