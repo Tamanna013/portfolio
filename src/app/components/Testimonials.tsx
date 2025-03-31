@@ -32,7 +32,7 @@ const Testimonials = () => {
       setTestimonial({ name: "", text: "", drawing: "" });
 
       if (canvasRef.current) {
-        canvasRef.current.clear();
+        canvasRef.current.resetCanvas();
       }
     }
   };
