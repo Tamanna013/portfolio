@@ -43,6 +43,12 @@ const projects = [
     image: "/icecream.png",
     github: "https://github.com/Tamanna013/ice-cream",
   },
+  {
+    title: "Natural Consultancy",
+    description: "A visually appealing website for some nature conserving club.",
+    image: "/nature.png",
+    github: "https://github.com/Tamanna013/Natural-Consultancy",
+  },
 ];
 
 const Projects = () => {
