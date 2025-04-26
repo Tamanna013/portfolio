@@ -1,15 +1,24 @@
-import React, { useState, useRef } from "react";
-import { ReactSketchCanvas, ReactSketchCanvasRef, CanvasPath } from "react-sketch-canvas";
+import React, { useState, useRef, useEffect } from "react";
+import { ReactSketchCanvas, ReactSketchCanvasRef } from "react-sketch-canvas";
 
 const Testimonials = () => {
   const [testimonial, setTestimonial] = useState({
     name: "",
     text: "",
-    drawing: "",
   });
+
   const [submittedTestimonials, setSubmittedTestimonials] = useState<
     Array<{ name: string; text: string; drawing: string }>
   >([]);
+
+  const [strokeColor, setStrokeColor] = useState("white");
+
+  useEffect(() => {
+    const storedTestimonials = localStorage.getItem("testimonials");
+    if (storedTestimonials) {
+      setSubmittedTestimonials(JSON.parse(storedTestimonials));
+    }
+  }, []);
 
   const canvasRef = useRef<ReactSketchCanvasRef>(null);
 
@@ -18,38 +27,61 @@ const Testimonials = () => {
     setTestimonial((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleDrawingChange = (updatedPaths: CanvasPath[]) => {
-    const drawingData = JSON.stringify(updatedPaths);
-    setTestimonial((prev) => ({ ...prev, drawing: drawingData }));
+  const handleColorChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setStrokeColor(e.target.value);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (testimonial.name && testimonial.text) {
-      setSubmittedTestimonials((prev) => [
-        ...prev,
-        { name: testimonial.name, text: testimonial.text, drawing: testimonial.drawing },
-      ]);
-      setTestimonial({ name: "", text: "", drawing: "" });
+      try {
+        const drawing = await canvasRef.current?.exportImage("png");
 
-      if (canvasRef.current) {
-        canvasRef.current.resetCanvas();
+        const newTestimonials = [
+          ...submittedTestimonials,
+          { name: testimonial.name, text: testimonial.text, drawing: drawing || "" },
+        ];
+
+        setSubmittedTestimonials(newTestimonials);
+        setTestimonial({ name: "", text: "" });
+
+        if (canvasRef.current) {
+          canvasRef.current.resetCanvas();
+        }
+
+        // Save to localStorage
+        localStorage.setItem("testimonials", JSON.stringify(newTestimonials));
+      } catch (error) {
+        console.error("Failed to export drawing", error);
       }
     }
   };
 
-  const clearScreen = () => {
-    setSubmittedTestimonials([]);
-    setTestimonial({ name: "", text: "", drawing: "" });
-
+  const clearDrawing = () => {
     if (canvasRef.current) {
-      canvasRef.current.resetCanvas();
+      canvasRef.current.clearCanvas();
     }
   };
 
+  const clearAll = () => {
+    setSubmittedTestimonials([]);
+    setTestimonial({ name: "", text: "" });
+    if (canvasRef.current) {
+      canvasRef.current.resetCanvas();
+    }
+    localStorage.removeItem("testimonials");
+  };
+
+  const deleteTestimonial = (index: number) => {
+    const updatedTestimonials = [...submittedTestimonials];
+    updatedTestimonials.splice(index, 1);
+    setSubmittedTestimonials(updatedTestimonials);
+    localStorage.setItem("testimonials", JSON.stringify(updatedTestimonials));
+  };
+
   const getRandomPosition = () => {
-    const top = Math.random() * 80 + 10;
-    const left = Math.random() * 80 + 10;
+    const top = Math.random() * 70 + 10;
+    const left = Math.random() * 70 + 10;
     return { top: `${top}%`, left: `${left}%` };
   };
 
@@ -57,7 +89,8 @@ const Testimonials = () => {
     <section className="bg-black text-white py-16 px-6">
       <h2 className="text-5xl font-bold text-center mb-12">Testimonials</h2>
 
-      <div className="max-w-4xl mx-auto flex flex-col md:flex-row gap-12">
+      <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-12">
+        {/* Form Section */}
         <div className="md:w-1/2 bg-black p-8 border-2 border-white rounded-lg shadow-lg">
           <h3 className="text-3xl font-semibold mb-6">Leave Your Testimonial</h3>
           <form onSubmit={handleSubmit} className="space-y-6">
@@ -86,40 +119,52 @@ const Testimonials = () => {
               />
             </div>
 
+            {/* Drawing Section */}
             <div>
-              <label htmlFor="drawing" className="block text-lg">Draw Your Testimonial</label>
+              {/* Color Picker */}
+              <div className="flex items-center mb-4">
+                <label className="mr-2">Pick a color:</label>
+                <input
+                  type="color"
+                  value={strokeColor}
+                  onChange={handleColorChange}
+                  className="w-10 h-10 border-2 border-white"
+                />
+              </div>
+
               <ReactSketchCanvas
                 ref={canvasRef}
                 width="100%"
-                height="400px"
-                strokeColor="white"
+                height="300px"
+                strokeColor={strokeColor}
                 strokeWidth={3}
-                onChange={handleDrawingChange}
+                className="border-2 border-white rounded-lg"
               />
             </div>
 
             <div className="flex justify-between gap-4 mt-4">
               <button
                 type="submit"
-                className="w-2/3 bg-white text-black py-3 font-semibold rounded-lg"
+                className="w-2/3 bg-white text-black py-3 font-semibold rounded-lg hover:bg-gray-200 transition"
               >
                 Submit Testimonial
               </button>
 
               <button
                 type="button"
-                onClick={clearScreen}
-                className="w-1/3 bg-gray-500 text-white py-3 font-semibold rounded-lg"
+                onClick={clearDrawing}
+                className="w-1/3 bg-gray-600 text-white py-3 font-semibold rounded-lg hover:bg-gray-700 transition"
               >
-                Clear Screen
+                Clear Drawing
               </button>
             </div>
           </form>
         </div>
-        
-        <div className="md:w-1/2 bg-black p-8 border-2 border-white rounded-lg shadow-lg relative">
+
+        {/* Submitted Testimonials Section */}
+        <div className="md:w-1/2 bg-black p-8 border-2 border-white rounded-lg shadow-lg relative overflow-hidden">
           <h3 className="text-3xl font-semibold mb-6">Submitted Testimonials</h3>
-          <div className="space-y-6 absolute w-full h-full">
+          <div className="relative w-full h-full">
             {submittedTestimonials.map((testimonial, index) => {
               const position = getRandomPosition();
               return (
@@ -129,7 +174,7 @@ const Testimonials = () => {
                   style={{ top: position.top, left: position.left }}
                 >
                   <p className="text-xl font-semibold">{testimonial.name}</p>
-                  <p className="text-lg">{testimonial.text}</p>
+                  <p className="text-lg mt-2">{testimonial.text}</p>
                   {testimonial.drawing && (
                     <div className="mt-4">
                       <img
@@ -139,6 +184,17 @@ const Testimonials = () => {
                       />
                     </div>
                   )}
+                  <div className="mt-4 flex gap-2">
+
+                    {/* Delete Button */}
+                    <button
+                      type="button"
+                      className="bg-red-500 text-white py-1 px-3 rounded-lg"
+                      onClick={() => deleteTestimonial(index)}
+                    >
+                      Delete
+                    </button>
+                  </div>
                 </div>
               );
             })}
