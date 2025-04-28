@@ -62,16 +62,7 @@ const Testimonials = () => {
       canvasRef.current.clearCanvas();
     }
   };
-
-  const clearAll = () => {
-    setSubmittedTestimonials([]);
-    setTestimonial({ name: "", text: "" });
-    if (canvasRef.current) {
-      canvasRef.current.resetCanvas();
-    }
-    localStorage.removeItem("testimonials");
-  };
-
+  
   const deleteTestimonial = (index: number) => {
     const updatedTestimonials = [...submittedTestimonials];
     updatedTestimonials.splice(index, 1);
