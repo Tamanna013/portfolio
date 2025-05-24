@@ -62,7 +62,7 @@ const Testimonials = () => {
       canvasRef.current.clearCanvas();
     }
   };
-  
+
   const deleteTestimonial = (index: number) => {
     const updatedTestimonials = [...submittedTestimonials];
     updatedTestimonials.splice(index, 1);

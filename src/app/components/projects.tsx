@@ -2,10 +2,10 @@ import React from "react";
 
 const projects = [
   {
-    title: "iPhone Clone",
-    description: "A front-end clone of the iPhone interface with smooth animations and interactions.",
-    image: "/apple.png",
-    github: "https://github.com/Tamanna013/iPhone",
+    title: "Chat Application",
+    description: "A chat application full stack website.",
+    image: "/s2.png",
+    github: "https://github.com/Tamanna013/Syntax",
   },
   {
     title: "AnswerPol - AI-Powered Q&A Platform",
@@ -20,12 +20,6 @@ const projects = [
     github: "https://github.com/Tamanna013/3D-Earth",
   },
   {
-    title: "Spotify Clone",
-    description: "A dynamic music streaming web app inspired by Spotify, built with Next.js and Tailwind CSS.",
-    image: "/ss2.png",
-    github: "https://github.com/Tamanna013/Spotify-Clone",
-  },
-  {
     title: "Fest Website",
     description: "A visually stunning website for our college fest. Made with Typescript and Three.js for animative elements.",
     image: "/img1.png",
@@ -36,19 +30,19 @@ const projects = [
     description: "A web tool that generates strong and customizable passwords with different security options.",
     image: "/password-generator.png",
     github: "https://github.com/Tamanna013/Password-Generator",
+  },  
+  {
+    title: "3D Wormhole",
+    description: "Wormhole experience created using Three.JS",
+    image: "/wormhole.png",
+    github: "https://github.com/Tamanna013/wormhole",
   },
   {
-    title: "Ice Cream Page",
-    description: "A visually appealing ice cream shop webpage built with Next.js.",
-    image: "/icecream.png",
-    github: "https://github.com/Tamanna013/ice-cream",
-  },
-  {
-    title: "Natural Consultancy",
-    description: "A visually appealing website for some nature conserving club.",
-    image: "/nature.png",
-    github: "https://github.com/Tamanna013/Natural-Consultancy",
-  },
+    title: "Atoms",
+    description: "A visually appealing Three.JS website.",
+    image: "/atoms.png",
+    github: "https://github.com/Tamanna013/atoms",
+  }
 ];
 
 const Projects = () => {
